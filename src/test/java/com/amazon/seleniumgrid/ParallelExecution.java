@@ -2,6 +2,7 @@ package com.amazon.seleniumgrid;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -35,6 +36,7 @@ public class ParallelExecution {
 			System.out.println(bname + " browser not found");
 		}
 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.amazon.in/");
 		System.out.println("App Title is : " + driver.getTitle());
 		System.out.println("App Current URL is : " + driver.getCurrentUrl());
